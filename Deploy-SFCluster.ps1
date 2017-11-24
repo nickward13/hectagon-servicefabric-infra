@@ -11,3 +11,4 @@ $groupname="hectagon-servicefabric"
 # Create the Service Fabric cluster.
 New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile 'C:\Users\nickw\source\repos\hectagon-servicefabric-infra\cluster.json' -ParameterFile 'C:\Users\nickw\source\repos\hectagon-servicefabric-infra\cluster.parameters.json' -CertificatePassword $certpwd -CertificateOutputFolder $certfolder -KeyVaultName $vaultname -KeyVaultResouceGroupName $vaultgroupname -CertificateSubjectName $subname
 
+Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My -FilePath C:\Users\nickw\mycertificates\mysfcluster20170531104310.pfx -Password $certpwd
